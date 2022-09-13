@@ -5,11 +5,8 @@ const corsOptions ={
     credentials:true, //access-control-allow-credentials:true
     optionSuccessStatus:200,
  }
-
-
-
 const app = express();
-//require('./DBConecction');
+
 //settings
 app.set('port', process.env.PORT || 3000);
 // middlerwares
