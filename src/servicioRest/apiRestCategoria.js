@@ -1,5 +1,5 @@
 const express = require('express');
-const NCategoria = require('../NCategoria/NCategoria');
+const NCategoria = require('../Negocio/NCategoria');
 
 const root = express.Router();
 const nCategoria = new NCategoria();

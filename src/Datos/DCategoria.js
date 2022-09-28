@@ -16,7 +16,7 @@ class DCategoria{
     }
     async update(id,nombre){
         await pgAdmin.query('UPDATE categoria SET nombre = $1 WHERE id = $2',
-        [nombre.toLowerCase().trim(),id]);
+        [this.parseString(nombre),id]);
     }
     async delete(id){
         await pgAdmin.query('DELETE FROM categoria WHERE id= $1',[id]);
@@ -24,6 +24,10 @@ class DCategoria{
     async getCategorias(){
         const resp= await pgAdmin.query('SELECT * FROM categoria ORDER BY id ASC');
         return resp.rows;
+    }
+
+    parseString(variable) {
+        if(variable.length >0) return variable[0].toUpperCase() + variable.slice(1).trim();
     }
 
 

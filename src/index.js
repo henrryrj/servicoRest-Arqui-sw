@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 // Routes
 app.use('/apiRest/categoria/',require('./servicioRest/apiRestCategoria'));
+app.use('/apiRest/producto/',require('./servicioRest/apiRestProducto'));
 
 app.listen(app.get('port'), () => {
     console.log('server en el puerto :', app.get('port'));

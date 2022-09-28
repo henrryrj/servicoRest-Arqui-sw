@@ -1,4 +1,4 @@
-const DCategoria = require('../DCategoria/DCategoria');
+const DCategoria = require('../Datos/DCategoria');
 const dCategoria = new DCategoria();
 class NCategoria{
     addCategoria  = async (nombre) => await dCategoria.save(nombre);
