@@ -9,10 +9,10 @@ class DCategoria{
     async save(nombre){
         const resp = 
         await pgAdmin
-        .query('SELECT * FROM categoria WHERE nombre = $1',[nombre.toLowerCase().trim()]);
+        .query('SELECT * FROM categoria WHERE nombre = $1',[this.parseString(nombre)]);
         if(resp.rows.length > 0) return;
         await pgAdmin
-        .query('INSERT INTO categoria(nombre) VALUES($1)',[nombre.toLowerCase().trim()]);
+        .query('INSERT INTO categoria(nombre) VALUES($1)',[this.parseString(nombre)]);
     }
     async update(id,nombre){
         await pgAdmin.query('UPDATE categoria SET nombre = $1 WHERE id = $2',
