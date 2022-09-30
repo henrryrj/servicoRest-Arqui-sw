@@ -1,6 +1,7 @@
 const express = require('express');
-const NProducto =  require('../Negocio/NProducto');
 const root = express.Router();
+
+const NProducto =  require('../Negocio/NProducto');
 const nProducto = new NProducto();
 
 root.get('/getProductos', async(req, res)=>{
