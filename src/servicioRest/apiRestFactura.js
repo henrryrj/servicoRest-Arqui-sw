@@ -28,9 +28,8 @@ root.post('/save', async (req, res) => {
             cantidad: unDetalle.cantidad,
             sub_total: unDetalle.sub_total
         }
-        await nFactura.addUnDetalle(detalle);
+        await nFactura.addUnDetalle({...detalle});
     });
-    await nFactura.resetSecuencia();
     res.status(200).json({ ok: true });
 });
 root.put('/edit/:nroFactura', async (req, res) => {

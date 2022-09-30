@@ -27,7 +27,7 @@ class DDetalleFactura {
 
     resetSecuencia = async ()=>{
         await pgAdmin.
-        query('ALTER SEQUENCE detallefactura_id_seq RESTART WITH 1');
+        query('ALTER SEQUENCE detallefactura_id_seq RESTART WITH 0');
     }
     
 }

@@ -26,11 +26,10 @@ class DFactura {
     }
     update = async(nro,Factura) =>{
         await pgAdmin.
-        query('UPDATE factura SET nit = $1, nombre = $2, monto_total = $3 WHERE nro = $4',
+        query('UPDATE factura SET nit = $1, nombre = $2 WHERE nro = $3',
         [
             Factura.nit,
             Factura.nombre,
-            Factura.monto_total,
             nro.toUpperCase().trim()
         ])
     }
@@ -42,7 +41,7 @@ class DFactura {
 
     getFacturas = async()=>{
         const resp = await pgAdmin
-        .query('SELECT * FROM factura ORDER BY fecha DESC');
+        .query('SELECT * FROM factura ORDER BY nro ASC');
         return resp.rows;
     }
 
