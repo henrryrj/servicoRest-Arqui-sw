@@ -25,7 +25,7 @@ root.post('/save', async (req, res) => {
         const detalle = {
             nro_factura: cabecera.nro,
             id_producto: unDetalle.id_producto,
-            cantidaad: unDetalle.cantidaad,
+            cantidad: unDetalle.cantidad,
             sub_total: unDetalle.sub_total
         }
         await nFactura.addUnDetalle(detalle);
