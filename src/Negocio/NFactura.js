@@ -10,6 +10,5 @@ class NFactura{
     delFactura   = async (nro)           => await dFactura.delete(nro);
     getFacturas  = async()               => await dFactura.getFacturas();
     addUnDetalle = async(Detalle)        => await ddetalle.save(Detalle);
-    resetSecuencia = async()             => await ddetalle.resetSecuencia();
 }
 module.exports = NFactura;

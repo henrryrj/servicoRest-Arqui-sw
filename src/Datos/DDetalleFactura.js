@@ -23,13 +23,7 @@ class DDetalleFactura {
         await pgAdmin.
         query('DELETE FROM detallefactura WHERE id = $1',
         [parseInt(id)]);
-    }
-
-    resetSecuencia = async ()=>{
-        await pgAdmin.
-        query('ALTER SEQUENCE detallefactura_id_seq RESTART WITH 0');
-    }
-    
+    }  
 }
 
 module.exports = DDetalleFactura;

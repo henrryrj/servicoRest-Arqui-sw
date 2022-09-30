@@ -1,5 +1,4 @@
 const root = require('express').Router();
-const DFactura = require('../Datos/DFactura');
 const NFactura = require('../Negocio/NFactura');
 const nFactura = new NFactura();
 
