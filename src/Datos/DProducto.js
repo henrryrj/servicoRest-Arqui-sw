@@ -28,7 +28,11 @@ class DProducto {
                 [id.toUpperCase().trim()]);
     }
     async getProductos() {
-        const resp = await pgAdmin.query('SELECT * FROM producto ORDER BY id ASC');
+        const resp = await pgAdmin
+        .query(`SELECT producto.id, producto.nombre, producto.precio, categoria.nombre AS nombre_categoria
+        FROM categoria, producto 
+        WHERE categoria.id = producto.id_categoria
+        ORDER BY categoria.nombre ASC  `);
         return resp.rows;
     }
 

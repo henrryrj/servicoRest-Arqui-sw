@@ -1,12 +1,12 @@
 const DCategoria = require('../Datos/DCategoria');
 const dCategoria = new DCategoria();
 class NCategoria{
-    addCategoria  = async (nombre) => await dCategoria.save(nombre);
+    addCategoria  = async (nombre)      => await dCategoria.save(nombre);
     
-    editCategoria = async (id,nombre) => await dCategoria.update(id,nombre);
+    editCategoria = async (id,nombre)   => await dCategoria.update(id,nombre);
     
-    delCategoria  = async (id) => await dCategoria.delete(id);
+    delCategoria  = async (id)          => await dCategoria.delete(id);
     
-    getCategorias = async ()=> await dCategoria.getCategorias();
+    getCategorias = async ()            => await dCategoria.getCategorias();
 }
 module.exports =NCategoria;

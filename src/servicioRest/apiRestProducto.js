@@ -4,7 +4,7 @@ const root = express.Router();
 const NProducto =  require('../Negocio/NProducto');
 const nProducto = new NProducto();
 
-root.get('/getProductos', async(req, res)=>{
+root.get('/getProductos', async(_req, res)=>{
     const listProductos =  await nProducto.getProductos();
     res.status(200).json(listProductos);
 })
