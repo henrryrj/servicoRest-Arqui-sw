@@ -1,4 +1,4 @@
-const pgAdmin = require("../DBConecction");
+const pgAdmin = require("../../DBConecction");
 
 class DDetalleFactura {
     constructor(id, nro_factura,id_producto, cantidad, sub_total){

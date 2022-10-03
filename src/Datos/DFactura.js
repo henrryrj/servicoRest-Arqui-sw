@@ -1,4 +1,4 @@
-const pgAdmin = require('../DBConecction');
+const pgAdmin = require('../../DBConecction');
 
 
 class DFactura {
